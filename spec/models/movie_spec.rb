@@ -8,7 +8,7 @@ RSpec.describe Movie, elasticsearch: true, :type => :model do
     before(:each) do
       Movie.create(
         title: "Roman Holiday",
-        overview: "A 1953 American romantic comedy film ...",
+        overview: "A 1953 American romantic comedy films ...",
         image_url: "wikimedia.com/Roman_holiday.jpg",
         vote_average: 4.0
       )
@@ -25,6 +25,12 @@ RSpec.describe Movie, elasticsearch: true, :type => :model do
     end
     it "should not index vote_average" do
       expect(Movie.search("4.0").records.length).to eq(0)
+    end
+    it "should apply stemming to title" do
+      expect(Movie.search("Holidays").records.length).to eq(1)
+    end
+    it "should apply stemming to overview" do
+      expect(Movie.search("film").records.length).to eq(1)
     end
   end
 end
