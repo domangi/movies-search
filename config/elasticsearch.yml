@@ -1,8 +1,8 @@
 # config/elasticsearch.yml
 development: &default
   es_bin: '../elasticsearch-6.2.3/bin/elasticsearch'
-  host: 'http://localhost:9400'
-  port: '9400'
+  host: 'http://localhost:9200'
+  port: '9200'
 test:
   es_bin: '../elasticsearch-6.2.3/bin/elasticsearch'
   host: 'http://localhost:9250'
