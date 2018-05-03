@@ -1,6 +1,7 @@
 # movies-search
 
-An example application for integrating Rails 5 API with Elasticsearch
+An example application for integrating Rails 5 API with Elasticsearch.
+Read a more in depth explaination on https://medium.freecodecamp.org/how-to-add-a-powerful-search-engine-to-your-rails-backend-57bced889032
 
 # Usage
 
